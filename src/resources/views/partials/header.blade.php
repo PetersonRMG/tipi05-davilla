@@ -14,7 +14,7 @@
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation menu-left clearfix">
-                                <li class="current dropdown"><a href="index.html">Home</a>
+                                <li class="current dropdown"><a href="index.html">Home </a>
                                     <ul>
                                         <li class="current"><a href="index.html">Cakes</a></li>
                                         <li><a href="index-2.html">Lollipop</a></li>

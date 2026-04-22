@@ -6,7 +6,7 @@
         <!-- Main box -->
         <div class="main-box">
             <div class="menu-box">
-                <div class="logo"><a href="index.html"><img src="images/logo.png" alt="" title=""></a></div>
+                <div class="logo"><a href="index.html"><img src="{{asset('davilla/images/logo-davilla-texto.svg')}}" alt="" title=""></a></div>
 
                 <!--Nav Box-->
                 <div class="nav-outer clearfix">
@@ -14,7 +14,7 @@
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation menu-left clearfix">
-                                <li class="current dropdown"><a href="index.html">Home </a>
+                                <li class="current dropdown"><a href="{{route ('home')}}">Home </a>
                                     <ul>
                                         <li class="current"><a href="index.html">Cakes</a></li>
                                         <li><a href="index-2.html">Lollipop</a></li>
@@ -26,16 +26,16 @@
                                         <li><a href="index-8.html">Landing</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="about-us.html">Pages</a>
+                                <li class="dropdown"><a href="{{ route ('sobre')}}">Sobre</a>
                                     <ul>
-                                        <li><a href="about-us.html">About Us</a></li>
-                                        <li><a href="our-staff.html">Our Staff</a></li>
+                                        <li><a href="#">Sobre</a></li>
+                                        <li><a href="#">Cardapio</a></li>
                                         <li><a href="pricing-tables.html">Pricing Tables</a></li>
                                         <li><a href="content-elements.html">Content Elements</a></li>
                                         <li><a href="recipes-list.html">Recipes Grid</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="portfolio-masonry.html">Portfolio</a>
+                                <li class="dropdown"><a href="{{route ('cardapio')}}">Cardapio</a>
                                     <ul>
                                         <li><a href="portfolio-masonry.html">Masonry</a></li>
                                         <li><a href="portfolio-masonry-wide.html">Masonry Wide</a></li>
@@ -50,7 +50,7 @@
                             </ul>
 
                             <ul class="navigation menu-right clearfix">
-                                <li class="dropdown"><a href="blog-showcase.html">Blog</a>
+                                <li class="dropdown"><a href="{{route ('regiao')}}">Região</a>
                                     <ul>
                                         <li><a href="blog-showcase.html">Checkerboard</a></li>
                                         <li><a href="blog-standard.html">Standard</a></li>
@@ -70,7 +70,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="shop.html">Shop</a>
+                                <li class="dropdown"><a href="{{route('pedidos')}}">Pedidos</a>
                                     <ul>
                                         <li><a href="shop.html">Shop</a></li>
                                         <li><a href="shopping-cart.html">Cart</a></li>
@@ -78,7 +78,7 @@
                                         <li><a href="login.html">My account</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Contacts</a></li>
+                                <li><a href="{{route('contato')}}">Contato</a></li>
                             </ul>
                         </div>
                     </nav>

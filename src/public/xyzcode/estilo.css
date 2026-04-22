@@ -1,0 +1,30 @@
+.divider{
+    
+}
+
+.logo76{
+    width: 76px;
+    height: 76px;
+    display: flex;
+}
+
+.logo {
+    margin: auto;
+    width: 76px;
+    height: 76px;
+}
+
+.logo-stick img{
+   height: 65px; 
+   margin: auto;
+}
+
+.logo img {
+    height: 165px;
+    width: auto;
+    display: block;
+}
+
+.service-block .image img {
+    height: stretch;
+}

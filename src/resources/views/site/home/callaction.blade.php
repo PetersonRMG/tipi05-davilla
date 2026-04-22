@@ -1,7 +1,11 @@
+    @php
+        $bg = asset('davilla/images/backgrounds/bg-home-1.jpg')
+    @endphp
+    
     <!-- Call to Action -->
     <section class="call-to-action" >
         <div class="shape_wrapper shape_one">
-            <div class="shape_inner shape_two" style="background-image: url();"><div class="overlay"></div></div>
+            <div class="shape_inner shape_two" style="background-image: url('{{$bg}}');"><div class="overlay"></div></div>
         </div>
 
         <div class="auto-container">

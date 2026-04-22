@@ -14,17 +14,17 @@
             <div class="recipes-carousel owl-carousel owl-theme">
                 <!-- Recipe Block -->
                 <div class="recipe-block">
-                     <figure class="recipe-image"><img src="{{asset('davilla/images/backgrounds/pink-donuts-hearts-pink-background.webp')}}" alt=""></figure> 
+                     <figure class="recipe-image"><img src="{{asset('davilla/images/backgrounds/desk_02.png')}}" alt=""></figure> 
                 </div>
 
                 <!-- Recipe Block -->
                 <div class="recipe-block">
-                     <figure class="recipe-image"><img src="{{asset('davilla/images/backgrounds/pink-donuts-hearts-pink-background.webp')}}" alt=""></figure>
+                     <figure class="recipe-image"><img src="{{asset('davilla/images/backgrounds/desk_03.png')}}" alt=""></figure>
                 </div>
 
                 <!-- Recipe Block -->
                 <div class="recipe-block">
-                     <figure class="recipe-image"><img src="{{asset('davilla/images/backgrounds/pink-donuts-hearts-pink-background.webp')}}" alt=""></figure>
+                     <figure class="recipe-image"><img src="{{asset('davilla/images/backgrounds/desk_01.png')}" alt=""></figure>
                 </div>
             </div>
         </div>

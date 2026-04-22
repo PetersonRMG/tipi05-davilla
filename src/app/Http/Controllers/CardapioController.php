@@ -8,6 +8,6 @@ class CardapioController extends Controller
 {
     //
     public function cardapio(){
-        return view('site.cardapio.cardapio');
+        return view('site.home.mainslide');
     }
 }

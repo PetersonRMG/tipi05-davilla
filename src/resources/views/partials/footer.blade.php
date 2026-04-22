@@ -1,7 +1,11 @@
+        @php
+            $bgfooter = asset('davilla/images/backgrounds/imgsobre-4.jpg');
+         @endphp     
+    
     <!-- Main Footer -->
     <footer class="main-footer">
         <div class="shape_wrapper shape_one">
-            <div class="shape_inner" style="background-image: url(https://via.placeholder.com/1920x600);"><div class="overlay"></div></div>
+            <div class="shape_inner" style="background-image: url('{{$bgfooter}}');"><div class="overlay"></div></div>
         </div>
 
         <!--Widgets Section-->

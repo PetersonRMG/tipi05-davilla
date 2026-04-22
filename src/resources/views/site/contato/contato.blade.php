@@ -1,7 +1,9 @@
     @extends('layout.site')
 
     @section('content')
+    
+    @include('site.contato.section')
 
-    <h1> Contatoooo !!!!!!!!!!</h1>
+
 
     @endsection

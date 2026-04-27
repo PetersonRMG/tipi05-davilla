@@ -15,11 +15,16 @@
 }
 
 .logo-stick img{
-   height: 65px; 
-   margin: auto;
+   height: 50px; 
+        width: auto;
+    display: block;
 }
 
-.logo img {
+.logo .stick{
+     width: 50px !important; 
+}
+
+.logo .logoP {
     height: 165px;
     width: auto;
     display: block;

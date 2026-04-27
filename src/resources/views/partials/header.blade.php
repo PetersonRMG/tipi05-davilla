@@ -6,7 +6,7 @@
         <!-- Main box -->
         <div class="main-box">
             <div class="menu-box">
-                <div class="logo"><a  href="index.html"><img  src="{{ asset('davilla/images/backgrounds/logo-davilla.svg') }}"></a></div>
+                <div class="logo"><a  href="{{route('home')}}"><img class="logoP" src="{{ asset('davilla/images/backgrounds/logo-davilla.svg') }}"></a></div>
 
                 <!--Nav Box-->
                 <div class="nav-outer clearfix">
@@ -130,7 +130,7 @@
             <div class="auto-container clearfix">
                 <!--Logo-->
                 <div class="logo">
-                    <a href="#" title="Sticky Logo"><img src="{{asset('davilla/images/logo-davilla-texto.svg')}}" alt="Sticky Logo"></a>
+                    <a href="#" title="Sticky Logo"><img class="stick" src="{{asset('davilla/images/backgrounds/logo-davilla-texto.svg')}}" alt="Sticky Logo"></a>
                 </div>
 
                 <!--Nav Outer-->

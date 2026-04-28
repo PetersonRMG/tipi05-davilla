@@ -28,8 +28,8 @@ class AppServiceProvider extends ServiceProvider
             $categorias = Categoria::orderBy('nome_categoria')->get(); 
 
             
-            var_dump($categorias);
-            dd($categorias);
+            //var_dump($categorias);
+            //dd($categorias);
             
             $view->with ('categoria', $categorias);
         });

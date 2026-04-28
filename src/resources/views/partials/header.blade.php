@@ -17,47 +17,34 @@
                                 <li class="current dropdown"><a href="{{route ('home')}}">Home </a>
                                     <ul>
                                         <li class="current"><a href="index.html">Cakes</a></li>
-                                        <li><a href="index-2.html">Lollipop</a></li>
-                                        <li><a href="index-3.html">Wedding</a></li>
-                                        <li><a href="index-4.html">Coffee</a></li>
-                                        <li><a href="index-5.html">Ice-Cream</a></li>
-                                        <li><a href="index-6.html">Macaron</a></li>
-                                        <li><a href="index-7.html">Shop</a></li>
-                                        <li><a href="index-8.html">Landing</a></li>
+                                       
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="{{ route ('sobre')}}">Sobre</a>
                                     <ul>
                                         <li><a href="#">Sobre</a></li>
-                                        <li><a href="#">Cardapio</a></li>
-                                        <li><a href="pricing-tables.html">Pricing Tables</a></li>
-                                        <li><a href="content-elements.html">Content Elements</a></li>
-                                        <li><a href="recipes-list.html">Recipes Grid</a></li>
+                                        
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="{{route ('cardapio')}}">Cardapio</a>
+                                <li class="dropdown"><a href="{{route ('cardapio.index')}}">Cardapio</a>
                                     <ul>
-                                        <li><a href="portfolio-masonry.html">Masonry</a></li>
-                                        <li><a href="portfolio-masonry-wide.html">Masonry Wide</a></li>
-                                        <li><a href="portfolio-wide.html">Wide</a></li>
-                                        <li><a href="portfolio-with-filter.html">With Filter</a></li>
-                                        <li><a href="portfolio-two-column.html">Two Columns</a></li>
-                                        <li><a href="portfolio-with-sidebar.html">With Sidebar</a></li>
-                                        <li><a href="portfolio-square.html">Square</a></li>
-                                        <li><a href="portfolio-single.html">single Post</a></li>
+                                        @forelse ( $categoria as $linha)
+                                        <li><a href="{{route('cardapio.categoria', $linha->id_categoria)}}">{{$linha->nome_categoria}}</a></li>
+                                            
+                                        @empty
+                                        <li>Nenhuma Categoria</li>
+                                            
+                                        @endforelse
+                                        
                                     </ul>
                                 </li>
                             </ul>
 
                             <ul class="navigation menu-right clearfix">
-                                <li class="dropdown"><a href="{{route ('regiao')}}">Região</a>
+                                <li class="dropdown"><a href="{{route ('regiao.index')}}">Região</a>
                                     <ul>
                                         <li><a href="blog-showcase.html">Checkerboard</a></li>
-                                        <li><a href="blog-standard.html">Standard</a></li>
-                                        <li><a href="blog-masonry.html">Masonry</a></li>
-                                        <li><a href="blog-masonry-full-width.html">Masonry Full Width</a></li>
-                                        <li><a href="blog-two-column.html">Two Columns Grid</a></li>
-                                        <li><a href="blog-three-column-wide.html">Three Columns Wide</a></li>
+                              
                                         <li class="dropdown"><a href="#">Post Types</a>
                                             <ul>
                                                 <li><a href="blog-single.html">Standard Post</a></li>

@@ -1,7 +1,11 @@
-    @extends('layout.site')
+@extends('layout.site')
 
-    @section('content')
+@section('content')
+@include('site.cardapio.page-title')
+@include('site.cardapio.content')
+@endsection
 
-    <h1> Cardápio !!!!!!!!!!</h1>
 
-    @endsection
+@push('plugins')
+<script src="{{ asset('davilla/js/mixitup.js') }}"></script>
+@endpush

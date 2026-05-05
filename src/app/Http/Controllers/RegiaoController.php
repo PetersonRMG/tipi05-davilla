@@ -8,6 +8,6 @@ class RegiaoController extends Controller
 {
     //
     public function regiao(){
-        return view('site.cardapio.cardapio');
+        return view('site.regiao.regiao');
     }
 }

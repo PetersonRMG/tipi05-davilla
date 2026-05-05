@@ -3,6 +3,7 @@
 @section('content')
 @include('site.cardapio.page-title')
 @include('site.cardapio.content')
+
 @endsection
 
 

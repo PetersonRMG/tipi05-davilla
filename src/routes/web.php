@@ -20,6 +20,9 @@ Route::get('/cardapio/categoria/{id}', [CardapioController::class , 'show'])->na
 Route::get('/pedidos', [PedidosController::class , 'pedidos'])->name('pedidos');
 Route::get('/regiao', [RegiaoController::class, 'regiao'])->name('regiao.index');
 
+/*Submenu Produto*/
+Route::get('/cardapio/produtos/{slug}',[CardapioController::class, 'showProduto'])->name('cardapio.produto');
+
 /* Submenu Regiao */
 Route::get('/regiao/area/{id}', [RegiaoController::class, 'show'])->name('regiao.area');
 

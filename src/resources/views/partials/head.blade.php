@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>Bellaria - a Delicious Cakes and Bakery HTML Template | Home Cake</title>
+<title>Confeitaria - Davilla </title>
 
 <!-- Stylesheets -->
 <link href="{{asset('davilla/css/bootstrap.css')}}" rel="stylesheet">
@@ -11,8 +11,8 @@
 <link href="{{asset('davilla/css/responsive.css')}}" rel="stylesheet">
 <link href="{{asset('xyzcode/estilo.css')}}" rel="stylesheet">
 
-<link rel="shortcut icon" href="{{asset('/davilla/images/favicon.png')}}" type="image/x-icon">
-<link rel="icon" href="{{asset('/davilla/images/favicon.png')}}" type="image/x-icon">
+<link rel="shortcut icon" href="{{asset('davilla/images/favicon.png')}}" type="image/x-icon">
+<link rel="icon" href="{{asset('davilla/images/favicon.png')}}" type="image/x-icon">
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

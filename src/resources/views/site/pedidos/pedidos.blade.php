@@ -1,7 +1,17 @@
-    @extends('layout.site')
+@extends('layout.site')
 
-    @section('content')
+@section('content')
 
-    <h1> Pedidos !!!!!!!!!!</h1>
+@include('site.pedidos.pagetitle')
+@include('site.pedidos.sidebar')
 
-    @endsection
+@endsection
+
+
+@push('plugins')
+
+<script src="{{ asset('davilla/js/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('davilla/js/select2.min.js') }}"></script>
+<script src="{{ asset('davilla/js/sticky_sidebar.min.js') }}"></script>
+
+@endpush

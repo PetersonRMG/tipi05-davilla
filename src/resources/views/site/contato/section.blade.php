@@ -1,5 +1,8 @@
+    @php
+        $bgcontact = asset('davilla/images/backgrounds/imgsobre-3.jpg')
+    @endphp
     <!--Page Title-->
-    <section class="page-title" style="background-image:url(https://via.placeholder.com/1920x400)">
+    <section class="page-title" style="background-image:url('{{$bgcontact}}')">
         <div class="auto-container">
             <h1>Contacts</h1>
             <ul class="page-breadcrumb">

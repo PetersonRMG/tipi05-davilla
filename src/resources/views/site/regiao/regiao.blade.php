@@ -1,7 +1,13 @@
-    @extends('layout.site')
+@extends('layout.site')
 
-    @section('content')
+@section('content')
 
-    <h1> REgiao !!!!!!!!!!</h1>
+@include('site.regiao.pagetitle')
+@include('site.regiao.recipes')
 
-    @endsection
+@endsection
+
+
+@push('plugins')
+<script src="{{ asset('davilla/js/select2.min.js') }}"></script>
+@endpush

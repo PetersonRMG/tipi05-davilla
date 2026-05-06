@@ -51,7 +51,7 @@
                     <div class="footer-column col-lg-4 col-md-12 col-sm-12">
                         <!--Footer Column-->
                         <div class="footer-widget logo-widget">
-                            <figure class="footer-logo"><img src="images/footer-logo.png" alt=""></figure>
+                            <figure class="footer-logo"><img src="{{asset('davilla/images/backgrounds/logo-davilla.svg')}}" alt=""></figure>
                         </div>
                     </div>
 

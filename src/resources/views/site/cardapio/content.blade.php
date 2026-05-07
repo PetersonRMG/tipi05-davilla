@@ -7,7 +7,7 @@
                 <!--Inicio Filter-->
                 <div class="filters clearfix">
                     <ul class="filter-tabs filter-btns clearfix">
-                        <li class="filter active" data-role="button" data-filter="all">Todos
+                        <li class="filter  {{ $categoriaAtiva == 'all' ? 'active' : '' }}" data-role="button" data-filter="all">Todos
                             <div class="filter_shape"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                     viewBox="0 0 850.4 217">
                                     <path
@@ -16,7 +16,7 @@
                                 </svg></div>
                         </li>
                         @foreach ($filtroCategoria as $linha)
-                            <li class="filter" data-role="button" data-filter=".categoria-{{ $linha->id_categoria }}">
+                            <li class="filter {{$categoriaAtiva == '.categoria-'. $linha->id_categoria ? 'active' : ''}}" data-role="button" data-filter=".categoria-{{ $linha->id_categoria }}">
                                 {{ $linha->nome_categoria }}
                                 <div class="filter_shape"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                         viewBox="0 0 850.4 217">

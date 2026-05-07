@@ -12,7 +12,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/sobre', [SobreController::class, 'sobre'])->name('sobre');
 Route::get('/cardapio', [CardapioController::class , 'cardapio'])->name('cardapio.index');
 
-/*  get -> /cardapio é o que mostra o caminho , 2 cardapio é a chamada do método eo terceiro é para voce chamar no caminho da chamada  */
+/*  get -> /cardapio é o que mostra o caminho , 2 cardapio é a chamada do método eo terceiro é para voce chamar no caminho da rota  */
 
 /**Sub menu cardapio */
 Route::get('/cardapio/categoria/{id}', [CardapioController::class , 'show'])->name('cardapio.categoria');

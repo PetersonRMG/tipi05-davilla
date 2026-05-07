@@ -4,10 +4,10 @@
     @endphp
     <section class="page-title" style="background-image:url('{{ $pageTitle }}')">
         <div class="auto-container">
-            <h1>Portfolio with Filter</h1>
+            <h1>Categorias</h1>
             <ul class="page-breadcrumb">
-                <li><a href="index.html">home</a></li>
-                <li>Portfolio with Filter</li>
+                <li><a href="{{route('home')}}">Home</a></li>
+                
             </ul>
         </div>
     </section>

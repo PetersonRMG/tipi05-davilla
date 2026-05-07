@@ -2093,6 +2093,10 @@
 				el.attributes.removeNamedItem('style');
 			}
 		});
+		
 	};
+
 	
 })(jQuery);
+
+

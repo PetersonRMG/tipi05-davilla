@@ -242,8 +242,8 @@
                             <div class="sidebar-widget tags-widget">
                                 <h3 class="widget-title">Categorias</h3>
                                 <ul class="tag-list clearfix">
-                                    @foreach($listaProduto as $cate)
-                                    <li><a href="#">{{$cate->nome_produto}}</a></li>
+                                    @foreach($filtroCategoria as $cate)
+                                    <li><a href="{{route('cardapio.categoria', $cate->id_categoria)}}">{{$cate->nome_categoria}}</a></li>
                                     @endforeach
                                     
                                 </ul>

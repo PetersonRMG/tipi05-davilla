@@ -54,20 +54,20 @@ class CardapioController extends Controller
 
         $listaRelacionados = Produto::with('CategoriaProduto')
         ->where('status_produto', 'ATIVO')
-        ->where('id_categoria', $produto->id_categoria)
-        ->orderBy('nome_produto')
+        ->where('id_categoria', $produto->id_categoria)            
+        ->where('id_produto', '!=', $produto->id_produto)
+        ->limit(5)
+        ->orderBy('ordem_produto')
         ->get();
 
         $listaProduto = Produto::with('CategoriaProduto')
         ->where('status_produto', 'ATIVO')        
-        ->orderBy('nome_produto')
+        ->orderBy('ordem_produto')
         ->get();
 
          $filtroCategoria = Categoria::where('status_categoria' , 'ATIVO')
         ->orderBy('ordem_categoria')
         ->get();
-
-
 
        //dd( $listaProduto);
         return view('site.produto.produto', compact('produto','listaProduto','listaRelacionados',  'filtroCategoria'));

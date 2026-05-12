@@ -33,3 +33,20 @@
 .service-block .image img {
     height: stretch;
 }
+
+.pricing-table .image-box .image img{
+    border-radius: 20%;
+}
+
+.off{
+position: relative;
+    font-size: 20px;
+    line-height: 1em;
+    color: #c0bdbc;
+    font-family: Merienda One;
+    vertical-align: middle;
+    margin-bottom: 20px;
+    text-decoration: line-through;
+}
+
+ 

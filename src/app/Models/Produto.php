@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Categoria;
+use App\Models\ItemKit;
 
 class Produto extends Model
 {
@@ -36,4 +37,11 @@ class Produto extends Model
     public function CategoriaProduto(){
         return $this->belongsTo(Categoria::class, 'id_categoria', 'id_categoria');
     }
+
+    public function itensKitProduto()
+    {
+        return $this->hasMany(ItemKit::class, 'id_produto', 'id_produto');
+    }
+
+
 }

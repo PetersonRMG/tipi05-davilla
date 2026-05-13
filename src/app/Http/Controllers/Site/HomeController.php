@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Site;
 
+use App\Http\Controllers\Controller;    
 use Illuminate\Http\Request;
 use App\Models\Categoria;
 use App\Models\Produto;
@@ -32,10 +33,7 @@ class HomeController extends Controller
         ->inRandomOrder()        
         ->get();
 
-          
-        $kits = Kit::with('itensKit.produto')
-        ->inRandomOrder()
-        ->get();
+
 
         $kits = Kit::with('itensKit.produto')
         ->inRandomOrder()
@@ -45,21 +43,21 @@ class HomeController extends Controller
 
                 $total = 0;
 
-            foreach ($kit->itensKit as $item) {
+                foreach ($kit->itensKit as $item) {
 
-                $total += $item->produto->valor_produto;
-            }
+                    $total += $item->produto->valor_produto;
+                }
 
-            // desconto de 10%
-            $desconto = $total * 0.10;
+                // desconto de 10%
+                $desconto = $total * 0.10;
 
-            // valor final
-            $valorFinal = $total - $desconto;
+                // valor final
+                $valorFinal = $total - $desconto;
 
-            // adiciona dinamicamente no objeto
-            $kit->valor_total = $total;
-            $kit->valor_desconto = $desconto;
-            $kit->valor_final = $valorFinal;
+                // adiciona dinamicamente no objeto
+                $kit->valor_total = $total;
+                $kit->valor_desconto = $desconto;
+                $kit->valor_final = $valorFinal;
             }
 
         //dd($kits);

@@ -66,6 +66,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="{{route('contato')}}">Contato</a></li>
+                                <li><a href="{{route('admin.dash')}}">Dash</a></li>
                             </ul>
                         </div>
                     </nav>

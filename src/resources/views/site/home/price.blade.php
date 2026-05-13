@@ -32,7 +32,7 @@
                         <div class="table-content">
                             <ul>
                                 @foreach ($item->itensKit as $linha)
-                                <li><span>1 x {{$linha->produto->nome_produto}}</span></li>
+                                <li><span>1 x {{$linha->produto->nome_produto}}{{$linha->produto}}</span></li>
                                     
                                 @endforeach
  

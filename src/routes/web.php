@@ -7,7 +7,11 @@ use App\Http\Controllers\Site\PedidosController;
 use App\Http\Controllers\Site\RegiaoController;
 use App\Http\Controllers\Site\ContatoController;
 
+
+
 // ADMIN
+
+use App\Http\Controllers\Admin\CategoriaController;
 use App\Http\Controllers\Admin\DashController;
    
 use Illuminate\Support\Facades\Route;
@@ -34,5 +38,7 @@ Route::get('/contato', [ContatoController::class, 'contato'])->name('contato');
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashController::class,'index'])->name('dash');
+    Route::get('/categoria', [CategoriaController::class,'index'])->name('categoria');
+
 
 });

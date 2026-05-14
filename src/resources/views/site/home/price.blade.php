@@ -23,7 +23,7 @@
                         </div>
                         <div class="title-box"><h3>{{$item->nome_kit}}</h3></div>
                         <div class="price-box">
-                            <div class="off " > De R${{  number_format($item->valor_total,2,'.',',') }}</div>
+                            <div class="off  " > De R${{  number_format($item->valor_total,2,'.',',') }}</div>
                             <div class="price text-success"> R$ {{ number_format($item->valor_final,2,'.',',') }}</div>
                             <span class="title ">{{$item->slug_kit}}</span><br>
                             
@@ -32,7 +32,7 @@
                         <div class="table-content">
                             <ul>
                                 @foreach ($item->itensKit as $linha)
-                                <li><span>1 x {{$linha->produto->nome_produto}}{{$linha->produto}}</span></li>
+                                <li><span>1 x {{$linha->produto->nome_produto}}</span></li>
                                     
                                 @endforeach
  

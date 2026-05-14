@@ -1,4 +1,4 @@
-    <!--begin::Script-->
+ <!--begin::Script-->
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
     <script
       src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"
@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     ></script>
     <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-    <script src="./js/adminlte.js"></script>
+    <script src="{{asset('dash/js/adminlte.js')}}"></script>
     <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
     <script>
       const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
@@ -76,7 +76,7 @@
     ></script>
 
     <!-- ChartJS -->
-    <script>
+     <script>
       // NOTICE!! DO NOT USE ANY OF THIS JAVASCRIPT
       // IT'S ALL JUST JUNK FOR DEMO
       // ++++++++++++++++++++++++++++++++++++++++++
@@ -133,7 +133,7 @@
         sales_chart_options,
       );
       sales_chart.render();
-    </script>
+    </script> 
 
     <!-- jsvectormap -->
     <script
@@ -148,7 +148,7 @@
     ></script>
 
     <!-- jsvectormap -->
-    <script>
+    {{-- <script>
       // World map by jsVectorMap
       new jsVectorMap({
         selector: '#world-map',
@@ -239,5 +239,8 @@
 
       const sparkline3 = new ApexCharts(document.querySelector('#sparkline-3'), option_sparkline3);
       sparkline3.render();
-    </script>
+    </script> --}}
     <!--end::Script-->
+  </body>
+  <!--end::Body-->
+</html>

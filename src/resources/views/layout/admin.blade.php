@@ -11,8 +11,8 @@
         @include('admin.partialsAdmin.nav')
         @include('admin.partialsAdmin.aside')
       
-
         <main>
+            @include('admin.partialsAdmin.content-header')
             @yield('content')
         </main>
 

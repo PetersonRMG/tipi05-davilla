@@ -1,8 +1,8 @@
 @extends('layout.admin')
 
-@section('title', 'Categoria | Confeitaria Dashboard')
-@section('pg-titulo', 'Categoria')
-@section('link-topo', 'Categoria')
+@section('title', 'Produto | Confeitaria Dashboard')
+@section('pg-titulo', 'Produto')
+@section('link-topo', 'Produto')
 @section('content')
 
     <!--begin::App Content-->
@@ -15,11 +15,11 @@
                     <div class=" card">
                         <div class="card-header   ">
                           
-                                <h3 class="card-title">Gerenciamento de Categorias</h3>
+                                <h3 class="card-title">Gerenciamento de Produtos</h3>
                            
                             <div class=" card-tools ">
                                 <button type="button" class="card-tools btn btn-success " data-bs-toggle="modal"
-                                    data-bs-target="#criar"><i class="bi bi-plus-circle"></i> Nova Categoria</button>
+                                    data-bs-target="#criar"><i class="bi bi-plus-circle"></i> Novo Produto</button>
                             </div>
                         </div>
                         <!-- /.card-header -->
@@ -27,31 +27,59 @@
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th style="width: 10px">Ordem</th>
-                                        <th>Nome</th>
-                                        <th>Descrições</th>
+                                        <th style="width: 10px">Foto</th>
+                                        <th>Nome e Descrição</th>
+                                        <th>Tamanho</th>
+                                        <th>Unid. Medida</th>
+                                        <th>Valor</th>
+                                        <th>Destaque</th>     
                                         <th style="width: 40px">Status</th>
                                         <th style="width: 40px">Edição</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($categoria as $item)    
+                                    @forelse ($listaProduto as $item)    
                                     
                                     <tr class="align-middle">
-                                        <td>{{$item->id_categoria}}</td>
-                                        <td>{{$item->nome_categoria}}</td>
+                                        <td class="light-box"  style="width: 150px"><a data-lightbox="galeria" href="light-box"><img style="width: 150px" src="{{asset('davilla/images/'.$item->foto_produto)}}" alt=""></a></td>
+                                        <td>{{$item->nome_produto}}
+                                              <div>{{$item->descricao_produto}}</div>
+                                        </td>
+                                        {{--
                                         <td>
-                                            {{-- <div class="progress progress-xs">
+                                             <div class="progress progress-xs">
                                                 <div class="progress-bar progress-bar-danger" style="width: 55%">
                                                     
                                                 </div>
 
-                                            </div> --}}
-                                            <div>{{$item->descricao_categoria}}</div>
+                                            </div> 
+                                        </td>
+                                            --}}
+                                        <td>
+                                            {{$item->tamanho_produto}}
                                         </td>
                                         <td>
+                                            {{$item->unid_med_produto}}
+                                        </td>
+                                        <td>
+                                           R$ {{ number_format($item->valor_produto, 2, '.', ',') }}
+                                        </td>
+
+                                        <td>
                                             {{-- <span class="badge text-bg-danger"></span> --}}
-                                            @if($item->status_categoria === 'ATIVO')
+                                            @if($item->destaque_produto === 'SIM')
+                                            <span class="badge text-bg-success text-uppercase">SIM</span>
+                                            
+                                            @else
+                                            <span class="badge text-bg-danger text-uppercase">NÃO</span>
+                                            
+                                            @endif
+                                        </td>
+                                        
+                                          
+                                        <td>
+                                            {{-- <span class="badge text-bg-danger"></span> --}}
+                                            @if($item->status_produto === 'ATIVO')
                                             <span class="badge text-bg-success text-uppercase">Ativo</span>
                                            
                                                 
@@ -62,10 +90,10 @@
                                         </td>
                                         <td class="col-1">
                                             <button type="button" class="card-tools btn btn-warning " data-bs-toggle="modal"
-                                                data-bs-target="#editar{{$item->id_categoria}}"><i class="bi bi-pencil-square"></i>
+                                                data-bs-target="#editar{{$item->id_produto}}"><i class="bi bi-pencil-square"></i>
                                             </button>
                                             <button type="button" class="card-tools btn btn-danger " data-bs-toggle="modal"
-                                                data-bs-target="#desativar{{$item->id_categoria}}"><i class="bi bi-trash"></i> </button>
+                                                data-bs-target="#desativar{{$item->id_produto}}"><i class="bi bi-trash"></i> </button>
                                         </td>
                                     </tr>
                                     @empty
@@ -111,9 +139,9 @@
 
     {{-- MODAL --}}
 
-    @include('admin.categoria.modal.criar')
-    @include('admin.categoria.modal.editar')
-    @include('admin.categoria.modal.desativar')
+    @include('admin.produto.modal.criar')
+    @include('admin.produto.modal.editar')
+    @include('admin.produto.modal.desativar')
 
 
 

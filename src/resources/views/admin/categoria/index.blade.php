@@ -8,15 +8,29 @@
     <!--begin::App Content-->
     <div class="app-content ">
         <!--begin::Container-->
+        @if (session('success'))
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                 {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>ATENÇÃO</strong> verifique os campos do formulario !
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
                 <div class="col-md-12">
                     <div class=" card">
                         <div class="card-header   ">
-                          
-                                <h3 class="card-title">Gerenciamento de Categorias</h3>
-                           
+
+                            <h3 class="card-title">Gerenciamento de Categorias</h3>
+
                             <div class=" card-tools ">
                                 <button type="button" class="card-tools btn btn-success " data-bs-toggle="modal"
                                     data-bs-target="#criar"><i class="bi bi-plus-circle"></i> Nova Categoria</button>
@@ -35,48 +49,63 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($categoria as $item)    
-                                    
-                                    <tr class="align-middle">
-                                        <td>{{$item->id_categoria}}</td>
-                                        <td>{{$item->nome_categoria}}</td>
-                                        <td>
-                                            {{-- <div class="progress progress-xs">
+                                    @forelse ($categoria as $item)
+                                        <tr class="align-middle">
+                                            <td>{{ $item->id_categoria }}</td>
+                                            <td>{{ $item->nome_categoria }}</td>
+                                            <td>
+                                                {{-- <div class="progress progress-xs">
                                                 <div class="progress-bar progress-bar-danger" style="width: 55%">
                                                     
                                                 </div>
 
                                             </div> --}}
-                                            <div>{{$item->descricao_categoria}}</div>
-                                        </td>
-                                        <td>
-                                            {{-- <span class="badge text-bg-danger"></span> --}}
-                                            @if($item->status_categoria === 'ATIVO')
-                                            <span class="badge text-bg-success text-uppercase">Ativo</span>
-                                           
-                                                
-                                            @else
-                                            <span class="badge text-bg-danger text-uppercase">Inativo</span>
-                                                
-                                            @endif
-                                        </td>
-                                        <td class="col-1">
-                                            <button type="button" class="card-tools btn btn-warning " data-bs-toggle="modal"
-                                                data-bs-target="#editar{{$item->id_categoria}}"><i class="bi bi-pencil-square"></i>
-                                            </button>
-                                            <button type="button" class="card-tools btn btn-danger " data-bs-toggle="modal"
-                                                data-bs-target="#desativar{{$item->id_categoria}}"><i class="bi bi-trash"></i> </button>
-                                        </td>
-                                    </tr>
-                                    @empty
-                                    <th>
-                                        <td>Nenhuma Categoria Encontrada</td>
-                                    </th>
+                                                <div>{{ $item->descricao_categoria }}</div>
+                                            </td>
+                                            <td>
+                                                {{-- <span class="badge text-bg-danger"></span> --}}
+                                                @if ($item->status_categoria === 'ATIVO')
+                                                    <span class="badge text-bg-success text-uppercase">Ativo</span>
+                                                @else
+                                                    <span class="badge text-bg-danger text-uppercase">Inativo</span>
+                                                @endif
+                                            </td>
+                                            <td class="col-1">
+                                                <button type="button" class="card-tools btn btn-warning "
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#editar{{ $item->id_categoria }}"><i
+                                                        class="bi bi-pencil-square"></i>
+                                                </button>
+                                                @if ($item->status_categoria === 'ATIVO')
+                                                    <form action="{{ route('admin.categoria.desativar', $item->id_categoria)}}" method="POST"   >
+                                                        @csrf
+                                                        @method('PATCH')
 
-                                    @endforelse 
+                                                        <button type="submit" class="card-tools btn btn-danger "
+                                                        data-bs-target="#desativar{{ $item->id_categoria }}"><i
+                                                        class="bi bi-trash"></i> </button>
+                                                    </form>
+                                                    
+                                                @else
+                                                <form action="{{ route('admin.categoria.ativar', $item->id_categoria)}}" method="POST"   >
+                                                    @csrf
+                                                    @method('PATCH')
+
+                                                    <button type="submit" class="card-tools btn btn-success "
+                                                    data-bs-target="#ativar{{ $item->id_categoria }}"><i class="bi bi-arrow-counterclockwise"></i> </button>
+                                                </form>
+                                                    
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <th>
+                                        <td>Nenhuma Categoria Encontrada</td>
+                                        </th>
+                                    @endforelse
                                 </tbody>
                             </table>
-                                
+
                         </div>
                         <!-- /.card-body -->
                         {{-- <div class="card-footer clearfix">

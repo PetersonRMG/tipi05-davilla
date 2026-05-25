@@ -11,6 +11,7 @@
                     {{-- O @csrf cria uma proteção para o form --}}
                     
                     @csrf
+                   
                     <div class="mb-3">
                         <label for="nome_categoria" class="form-label">Categoria</label>
                         <input type="text" class="form-control" id="nome_categoria" aria-describedby="emailHelp"

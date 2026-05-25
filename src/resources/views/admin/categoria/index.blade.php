@@ -63,41 +63,57 @@
                                                 <div>{{ $item->descricao_categoria }}</div>
                                             </td>
                                             <td>
-                                                {{-- <span class="badge text-bg-danger"></span> --}}
+                                                {{-- BTN ATIVAR E DESATIVAR --}}
                                                 @if ($item->status_categoria === 'ATIVO')
                                                     <span class="badge text-bg-success text-uppercase">Ativo</span>
                                                 @else
                                                     <span class="badge text-bg-danger text-uppercase">Inativo</span>
                                                 @endif
                                             </td>
-                                            <td class="col-1">
-                                                <button type="button" class="card-tools btn btn-warning "
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#editar{{ $item->id_categoria }}"><i
-                                                        class="bi bi-pencil-square"></i>
-                                                </button>
-                                                @if ($item->status_categoria === 'ATIVO')
-                                                    <form action="{{ route('admin.categoria.desativar', $item->id_categoria)}}" method="POST"   >
+                                            <td class=" d-flex align-items-center">  
+                                                
+                                               @if ($item->status_categoria === 'ATIVO')
+
+                                                    <form action="{{ route('admin.categoria.desativar', $item->id_categoria) }}"
+                                                        method="POST">
                                                         @csrf
                                                         @method('PATCH')
 
-                                                        <button type="submit" class="card-tools btn btn-danger "
-                                                        data-bs-target="#desativar{{ $item->id_categoria }}"><i
-                                                        class="bi bi-trash"></i> </button>
-                                                    </form>
-                                                    
-                                                @else
-                                                <form action="{{ route('admin.categoria.ativar', $item->id_categoria)}}" method="POST"   >
-                                                    @csrf
-                                                    @method('PATCH')
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input"
+                                                                type="checkbox"
+                                                                    role="switch"
+                                                                    checked
+                                                                    onchange="this.form.submit()">
+                                                            </div>
+                                                        </form>
 
-                                                    <button type="submit" class="card-tools btn btn-success "
-                                                    data-bs-target="#ativar{{ $item->id_categoria }}"><i class="bi bi-arrow-counterclockwise"></i> </button>
-                                                </form>
-                                                    
+                                                        @else
+
+                                                    <form action="{{ route('admin.categoria.ativar', $item->id_categoria) }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        @method('PATCH')
+
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input"
+                                                                type="checkbox"
+                                                                role="switch"
+                                                                onchange="this.form.submit()">
+                                                        </div>
+                                                    </form>
+
                                                 @endif
+                                                    {{-- BTN EDITAR --}}
+                                                <button type="button" class="card-tools btn btn-warning "
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#editar{{ $item->id_categoria }}"><i
+                                                    class="bi bi-pencil-square"></i>
+                                                </button>
+                                                @include('admin.categoria.modal.editar', ['categoria' => $item])
                                             </td>
                                         </tr>
+                                        
                                     @empty
                                         <th>
                                         <td>Nenhuma Categoria Encontrada</td>
@@ -141,7 +157,7 @@
     {{-- MODAL --}}
 
     @include('admin.categoria.modal.criar')
-    @include('admin.categoria.modal.editar')
+
     @include('admin.categoria.modal.desativar')
 
 

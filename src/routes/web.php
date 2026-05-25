@@ -42,10 +42,19 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/categoria', [CategoriaController::class,'index'])->name('categoria');
     Route::post('/categoria', [CategoriaController::class,'store'])->name('categoria.store');
-    Route::patch('/categoria/{id}/desativar', [CategoriaController::class,'desativar'])->name('categoria.desativar');
     Route::patch('/categoria/{id}/ativar', [CategoriaController::class,'ativar'])->name('categoria.ativar');
+    Route::patch('/categoria/{id}/desativar', [CategoriaController::class,'desativar'])->name('categoria.desativar');
+    Route::put('/categoria/{id}/editar', [CategoriaController::class,'update'])->name('categoria.update');
     
-
+    
+    
+    
     Route::get('/produto', [ProdutoController::class,'index'])->name('produto');
+    Route::post('/produto', [ProdutoController::class,'store'])->name('produto.store');
+    Route::patch('/produto/{id}/ativar', [ProdutoController::class,'ativar'])->name('produto.ativar');
+    Route::patch('/produto/{id}/desativar', [ProdutoController::class,'desativar'])->name('produto.desativar');
+    Route::put('/produto/{id}/editar', [ProdutoController::class,'update'])->name('produto.update');
+
+
 });
      

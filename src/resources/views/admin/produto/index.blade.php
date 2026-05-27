@@ -9,9 +9,8 @@
     <div class="app-content ">
         <!--begin::Container-->
         @if (session('success'))
-
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                 {{ session('success') }}
+                {{ session('success') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
@@ -61,16 +60,7 @@
                                             <td>{{ $item->nome_produto }}
                                                 <div>{{ $item->descricao_produto }}</div>
                                             </td>
-                                            {{--
-                                        <td>
-                                             <div class="progress progress-xs">
-                                                <div class="progress-bar progress-bar-danger" style="width: 55%">
-                                                    
-                                                </div>
 
-                                            </div> 
-                                        </td>
-                                            --}}
                                             <td>
                                                 {{ $item->tamanho_produto }}
                                             </td>
@@ -82,7 +72,6 @@
                                             </td>
 
                                             <td>
-                                                {{-- <span class="badge text-bg-danger"></span> --}}
                                                 @if ($item->destaque_produto === 'SIM')
                                                     <span class="badge text-bg-success text-uppercase">SIM</span>
                                                 @else
@@ -99,41 +88,43 @@
                                                     <span class="badge text-bg-danger text-uppercase">Inativo</span>
                                                 @endif
                                             </td>
-                                            <td class="d-flex align-items-center">
+                                            <td>
+                                                <div class="d-flex align-items-center ">
 
 
-                                                @if ($item->status_produto === 'ATIVO')
-                                                    <form
-                                                        action="{{ route('admin.produto.desativar', $item->id_produto) }}"method="POST">
-                                                        @csrf
-                                                        @method('PATCH')
+                                                    @if ($item->status_produto === 'ATIVO')
+                                                        <form
+                                                            action="{{ route('admin.produto.desativar', $item->id_produto) }}"method="POST">
+                                                            @csrf
+                                                            @method('PATCH')
 
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox" role="switch"
-                                                                checked onchange="this.form.submit()">
-                                                        </div>
-                                                    </form>
-                                                @else
-                                                    <form
-                                                        action="{{ route('admin.produto.desativar', $item->id_produto) }}"method="POST">
-                                                        @csrf
-                                                        @method('PATCH')
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    role="switch" checked onchange="this.form.submit()">
+                                                            </div>
+                                                        </form>
+                                                    @else
+                                                        <form
+                                                            action="{{ route('admin.produto.ativar', $item->id_produto) }}"method="POST">
+                                                            @csrf
+                                                            @method('PATCH')
 
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox" role="switch"
-                                                                checked onchange="this.form.submit()">
-                                                        </div>
-                                                    </form>
-                                                @endif
-                                                
-                                                <button type="button" class="card-tools btn btn-warning "
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#editar{{ $item->id_produto }}"><i
-                                                        class="bi bi-pencil-square"></i>
-                                                </button>
-                                                @include('admin.produto.modal.editar', [
-                                                    'produto' => $item,
-                                                ])
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    role="switch" checked onchange="this.form.submit()">
+                                                            </div>
+                                                        </form>
+                                                    @endif
+
+                                                    <button type="button" class="card-tools btn btn-warning "
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#editar{{ $item->id_produto }}"><i
+                                                            class="bi bi-pencil-square"></i>
+                                                    </button>
+                                                    @include('admin.produto.modal.editar', [
+                                                        'produto' => $item,
+                                                    ])
+                                                </div>
                                             </td>
                                         </tr>
                                     @empty

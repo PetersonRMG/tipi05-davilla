@@ -111,7 +111,7 @@
 
                                                             <div class="form-check form-switch">
                                                                 <input class="form-check-input" type="checkbox"
-                                                                    role="switch" checked onchange="this.form.submit()">
+                                                                    role="switch"  onchange="this.form.submit()">
                                                             </div>
                                                         </form>
                                                     @endif

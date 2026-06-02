@@ -120,7 +120,7 @@
                         </div>
 
                         <div class="dash ms-5">
-                            <a href="{{ route('admin.dash') }}"><img src="{{ asset('davilla/images/perfil.png') }}" alt="icone-dashbboard"></a>
+                            <a href="{{ route('login') }}"><img src="{{ asset('davilla/images/perfil.png') }}" alt="icone-dashbboard"></a>
                         </div>
 
                     </div>

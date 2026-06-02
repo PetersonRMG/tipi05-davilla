@@ -1,4 +1,4 @@
-<div class="modal fade" id="editar{{ $produto->id_produto }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+<div class="modal modal-xl fade" id="editar{{ $produto->id_produto }}" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -36,6 +36,7 @@
                                 </select>
                             </div>
                             <div class="mb-3 col-md-12">
+                                
                                 <label for="descricao_produto" class="form-label">Descrição</label>
                                 <textarea type="textarea" class="form-control" id="descricao_produto" name="descricao_produto" rows="5">{{ $produto->descricao_produto }}</textarea>
                                 <div id="emailHelp" class="form-text">Informe a descrição da Produto.</div>

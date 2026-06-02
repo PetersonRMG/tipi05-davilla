@@ -25,7 +25,9 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         View::composer('partials.header', function($view){
-            $categorias = Categoria::orderBy('nome_categoria')->get(); 
+            $categorias = Categoria::where('status_categoria', 'ATIVO')
+            ->orderBy('nome_categoria')
+            ->get(); 
 
             
             //var_dump($categorias);

@@ -105,12 +105,7 @@
 
                                                 @endif
                                                     {{-- BTN EDITAR --}}
-                                                <button type="button" class="card-tools btn btn-warning "
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#editar{{ $item->id_categoria }}"><i
-                                                    class="bi bi-pencil-square"></i>
-                                                </button>
-                                                @include('admin.categoria.modal.editar', ['categoria' => $item])
+                                                        
                                             </td>
                                         </tr>
                                         

@@ -1,4 +1,4 @@
-<div class="modal fade col-md-10" id="criar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal modal-xl fade col-md-10" id="criar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 

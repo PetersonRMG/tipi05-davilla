@@ -36,15 +36,14 @@ class CardapioController extends Controller
         ->get();
 
         // Buscar os produtos ativos da categoria
-        $listaProduto = Produto::with('CategoriaProduto')
-        ->where('status_produto', 'ATIVO')
+        $listaProduto = Produto::with('CategoriaProduto')          
         ->orderBy('ordem_produto')
         ->get();
 
         $categoriaAtiva= '.categoria-'. $id;
         //dd($categoriaAtiva);
 
-         return view('site.cardapio.cardapio', compact('filtroCategoria' , 'listaProduto','categoriaAtiva'));
+        return view('site.cardapio.cardapio', compact('filtroCategoria' , 'listaProduto','categoriaAtiva'));
     }
 
     public function showProduto  ($slug){

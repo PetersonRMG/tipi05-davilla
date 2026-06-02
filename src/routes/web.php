@@ -14,6 +14,7 @@ use App\Http\Controllers\Site\ContatoController;
 use App\Http\Controllers\Admin\CategoriaController;
 use App\Http\Controllers\Admin\ProdutoController;
 use App\Http\Controllers\Admin\DashController;
+use App\Http\Controllers\Admin\AuthController;
    
 use Illuminate\Support\Facades\Route;
 
@@ -37,24 +38,33 @@ Route::get('/regiao/area/{id}', [RegiaoController::class, 'show'])->name('regiao
 
 Route::get('/contato', [ContatoController::class, 'contato'])->name('contato');
 
+
+//INICIO DO PREFIX ADMIN
 Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/', [DashController::class,'index'])->name('dash');
 
-    Route::get('/categoria', [CategoriaController::class,'index'])->name('categoria');
-    Route::post('/categoria', [CategoriaController::class,'store'])->name('categoria.store');
-    Route::patch('/categoria/{id}/ativar', [CategoriaController::class,'ativar'])->name('categoria.ativar');
-    Route::patch('/categoria/{id}/desativar', [CategoriaController::class,'desativar'])->name('categoria.desativar');
-    Route::put('/categoria/{id}/editar', [CategoriaController::class,'update'])->name('categoria.update');
-    
-    
-    
-    
-    Route::get('/produto', [ProdutoController::class,'index'])->name('produto');
-    Route::post('/produto', [ProdutoController::class,'store'])->name('produto.store');
-    Route::patch('/produto/{id}/ativar', [ProdutoController::class,'ativar'])->name('produto.ativar');
-    Route::patch('/produto/{id}/desativar', [ProdutoController::class,'desativar'])->name('produto.desativar');
-    Route::put('/produto/{id}/editar', [ProdutoController::class,'update'])->name('produto.update');
+    Route::get('/login', [AuthController::class,'login'])->name('login');
+    Route::post('/login', [AuthController::class,'autenticar'])->name('login.autenticar');
+    Route::post('/logout', [AuthController::class,'sair'])->name('logout');
 
+    //ROTAS PROTEGIDAS:
 
+    Route::middleware('auth:admin')->group(function(){
+
+        Route::get('/', [DashController::class,'index'])->name('dash');
+    
+        Route::get('/categoria', [CategoriaController::class,'index'])->name('categoria');
+        Route::post('/categoria', [CategoriaController::class,'store'])->name('categoria.store');
+        Route::patch('/categoria/{id}/ativar', [CategoriaController::class,'ativar'])->name('categoria.ativar');
+        Route::patch('/categoria/{id}/desativar', [CategoriaController::class,'desativar'])->name('categoria.desativar');
+        Route::put('/categoria/{id}/editar', [CategoriaController::class,'update'])->name('categoria.update');        
+        
+        
+        
+        Route::get('/produto', [ProdutoController::class,'index'])->name('produto');
+        Route::post('/produto', [ProdutoController::class,'store'])->name('produto.store');
+        Route::patch('/produto/{id}/ativar', [ProdutoController::class,'ativar'])->name('produto.ativar');
+        Route::patch('/produto/{id}/desativar', [ProdutoController::class,'desativar'])->name('produto.desativar');
+        Route::put('/produto/{id}/editar', [ProdutoController::class,'update'])->name('produto.update');
+    });
 });
      

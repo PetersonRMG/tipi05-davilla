@@ -30,14 +30,20 @@ class AuthController extends Controller
 
         if(Auth::guard('admin')->attempt($credenciais)){
             $request -> session() -> regenerate();
-            return redirect('admin  ');
+            return redirect('admin');
         };
 
 
         return back()-> withInput()->with('errors','Email ou Senha Inválida');
     }
 
-    public function logout(){
+    public function logout(Request $request){
+        Auth::guard('admin')->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerate();
+
+        return redirect()->route('admin.login');
 
     }
 

@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\CategoriaController;
 use App\Http\Controllers\Admin\ProdutoController;
 use App\Http\Controllers\Admin\DashController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\PerfilController;
    
 use Illuminate\Support\Facades\Route;
 
@@ -43,8 +44,8 @@ Route::get('/contato', [ContatoController::class, 'contato'])->name('contato');
 Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/login', [AuthController::class,'login'])->name('login');
-    Route::post('/login', [AuthController::class,'autenticar'])->name('login.autenticar');
-    Route::post('/logout', [AuthController::class,'sair'])->name('logout');
+    Route::post('/login/autenticar', [AuthController::class,'autenticar'])->name('login.autenticar');
+    Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 
     //ROTAS PROTEGIDAS:
 
@@ -65,6 +66,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::patch('/produto/{id}/ativar', [ProdutoController::class,'ativar'])->name('produto.ativar');
         Route::patch('/produto/{id}/desativar', [ProdutoController::class,'desativar'])->name('produto.desativar');
         Route::put('/produto/{id}/editar', [ProdutoController::class,'update'])->name('produto.update');
+
+        Route::get('/perfil',[PerfilController::class,'index'])->name('perfil');
+        Route::put('/perfil/{id}',[PerfilController::class,'update'])->name('perfil.update');
     });
 });
      

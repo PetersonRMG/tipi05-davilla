@@ -22,10 +22,10 @@ class PerfilController extends Controller
         //dd($request);
         $request->validate([
             'nome_usuario'       => 'required|string|max:200',
-            'email_usuario' => 'required|string',
-            'perfil_usuario'   => 'required|in:Administrador,Gerente,Atendente,Confeiteiro,Caixa',
-            'foto_usuario'      => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'status_usuario'    => 'required|in:Ativo,Inativo',
+            'email_usuario'      => 'required|string',
+            'perfil_usuario'     => 'required|in:Administrador,Gerente,Atendente,Confeiteiro,Caixa',
+            'foto_usuario'       => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'status_usuario'     => 'required|in:Ativo,Inativo',
             
         ]);
         
@@ -54,10 +54,10 @@ class PerfilController extends Controller
 
         $user->update([
             'nome_usuario'       => $request->nome_usuario,
-            'email_usuario' => $request->email_usuario,
-            'perfil_usuario'   => $request->perfil_usuario,
-            'foto_usuario'      => $caminhoFoto ,
-            'status_usuario'    => $request->status_usuario,
+            'email_usuario'      => $request->email_usuario,
+            'perfil_usuario'     => $request->perfil_usuario,
+            'foto_usuario'       => $caminhoFoto ,
+            'status_usuario'     => $request->status_usuario,
 
         ]);
 

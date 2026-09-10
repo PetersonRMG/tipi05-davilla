@@ -14,6 +14,7 @@ class AuthController extends Controller
     }
 
     public function autenticar(Request $request){
+        dd($request);
         $request->validate([
             'email_usuario' => 'required|email',
             'senha_usuario' => 'required',
@@ -22,7 +23,7 @@ class AuthController extends Controller
 
         $credenciais = [
             'email_usuario' => $request-> email_usuario,
-            'password' => $request-> senha_usuario,
+            'senha_usuario' => $request-> senha_usuario,
             'status_usuario' => 'Ativo',
         ];
 

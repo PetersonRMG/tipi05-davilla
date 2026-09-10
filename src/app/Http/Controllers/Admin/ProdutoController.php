@@ -14,9 +14,6 @@ class ProdutoController extends Controller
     
     public function index()    {
 
-
-
-
         $produtos = Produto::orderBy('ordem_produto')->get();
         
         $categorias = Categoria::where('status_categoria', 'ATIVO')

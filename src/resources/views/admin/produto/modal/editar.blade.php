@@ -10,7 +10,7 @@
                 <form method="POST" action="{{ route('admin.produto.update', $produto->id_produto) }}"
                     enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
+                    @method('PUT')  
 
                     <div class="card-body">
                         <div class="row">

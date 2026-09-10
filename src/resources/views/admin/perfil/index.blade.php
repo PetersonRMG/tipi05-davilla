@@ -2,9 +2,6 @@
 
 @section('content')
 
-    @include('admin.perfil.perfil')
+    @include('admin.perfil.perfil') 
     
-
-
-
 @endsection

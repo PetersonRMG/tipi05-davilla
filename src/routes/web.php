@@ -39,6 +39,8 @@ Route::get('/regiao/area/{id}', [RegiaoController::class, 'show'])->name('regiao
 
 Route::get('/contato', [ContatoController::class, 'contato'])->name('contato');
 
+Route::view('/api/documentacao', 'api.documentacao')->name('api.documentacao');
+
 
 //INICIO DO PREFIX ADMIN
 Route::prefix('admin')->name('admin.')->group(function () {
